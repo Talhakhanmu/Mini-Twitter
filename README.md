@@ -1,133 +1,73 @@
-# Laravel Vue
+# Mini Twitter
 
-Eine Vorlage für die Verwendung von Laravel mit vue.js.
+## Overview
 
-## Vorbereiten
+### The Tweet Management System is a web application built with Laravel and Vue.js that allows users to create, read, update, and delete tweets. It provides a user-friendly interface for managing tweets efficiently.
 
-### 1. Repository herunterladen oder Projekt selbst einrichten
+## Features
 
-#### 1. Herunterladen
+## Project Title
 
-Lade das Repository auf Deinen Computer herunter, benenne es um und verschiebe es in Deinen Projektordner.
+## Tweet Management System
 
-#### 2. Selber einrichten
+## Overview
 
-Wenn Du selber alles einrichten willst, um einen genaueren Überblick zu erhalten, kannst Du Dir die [Installation.md](https://github.com/opportunity-zh/laravel-vue/blob/main/Installation.md) anschauen und die Schritte selber durchgehen.
+### The Tweet Management System is a web application built with Laravel and Vue.js that allows users to create, read, update, and delete tweets. It provides a user-friendly interface for managing tweets efficiently.
 
-### 2. Dependencies installieren
+## Features
 
-#### 1. NPM Packages
+### Tweet Creation: Users can create new tweets by providing a title and content.
 
-Öffne das Projekt in VS Code, öffne das Terminal und verwende den folgedenden Befehl um alle Dependencies (Packages) zu installieren.
+### Tweet Viewing: View all tweets with their titles, content, and creation/update timestamps.
 
-```bash
-npm install
-```
+### Tweet Editing: Users can edit existing tweets to update their title or content.
 
-#### 2. Composer Packages
+### Tweet Deletion: Delete unwanted tweets from the system.
 
-Im selben Terminal kannst Du auch gleich die Composer Packages installieren, indem Du folgenden Befehl eingibst:
+### Validation: Input fields are validated to ensure that all required information is provided.
 
-```bash
-composer install
-```
+### Error Handling: Comprehensive error handling for better user experience.
 
-### 3. Environment Variablen anpassen
+# Usage
 
-Nimm das **.env.example** File und benenne es um in **.env**. Wenn Du es öffnest, siehst Du, dass der **APP_KEY noch leer** ist. Mit folgendem Befehl kannst Du dir einen Key generieren, damit alles funktioniert.
+### Project Title
 
-```bash
-php artisan key:generate
-```
+## Tweet Management System
 
-## Starten
+# Overview
 
-### 1. Docker Container hochfahren
+### The Tweet Management System is a web application built with Laravel and Vue.js that allows users to create, read, update, and delete tweets. It provides a user-friendly interface for managing tweets efficiently.
 
-Wenn Du in Laravel mit Docker arbeitest, kannst du statt dem Befehl docker compose den Befehl './vendor/bin/sail up' verwenden. Evtl. ist auf Deinem Computer bereits ein alias hinzugefügt worden, deshalb kannst Du die Kurzform davon verwenden:
+## Features
 
-```bash
-sail up
-```
+### Tweet Creation: Users can create new tweets by providing a title and content.
 
-### 2. NPM Server starten
+### Tweet Viewing: View all tweets with their titles, content, and creation/update timestamps.
 
-```bash
-npm run dev
-```
+### Tweet Editing: Users can edit existing tweets to update their title or content.
 
-### 3. Website aufrufen
+### Tweet Deletion: Delete unwanted tweets from the system.
 
-Unter localhost kannst Du nun die Website anschauen.
+### Validation: Input fields are validated to ensure that all required information is provided.
 
-```bash
-http://localhost
-```
+### Error Handling: Comprehensive error handling for better user experience.
 
-### 4. PHPMyAdmin aufrufen
+# Usage
 
-Unter localhost:8080 findest Du PHPMyAdmin. Logindaten findest Du im .env File.
+### Home Page: This page displays all tweets along with their titles, content, and creation/update timestamps.
 
-```bash
-http://localhost:8080
-```
+### Create Tweet: Click on the "Create Tweet" button to create a new tweet. Fill in the required fields and click "Save Tweet".
 
-## Fehlerbehebung
+### Edit Tweet: Click on the "Edit" button next to a tweet to edit its title or content. Make the necessary changes and click "Save Changes".
 
-### 1. Ports besetzt
+### Delete Tweet: Click on the "Delete" button next to a tweet to delete it from the system.
 
-Das kann passieren, wenn die Ports, die Docker in den Containern benutzen will, diese jedoch vom System bereits besetzt sind.
+# Technologies Used
 
-Beispielsweise: listen tcp4 0.0.0.0:80: bind: address already in use
+### Backend: Laravel, PHP
 
-1. Prozess finden
-   Dann musst Du herausfinden, von welchem Prozess diese verwendet werden und diesen Prozess dann beenden. Das machst Du mit folgenden Befehlen. Ersetze dabei **PORT** durch den besetzten Port. Im oberen Beispiel wäre das **80**
+### Frontend: Vue.js, JavaScript, HTML/CSS
 
-```bash
-sudo netstat -laputen | grep ':PORT'
-```
+### Database: MySQL
 
-2. Prozess beenden
-   Wenn Du den Prozess gefunden hast, welcher den Port besetzt, findest Du neben dem Namen des Prozesses eine Zahl, welches die **Prozess-ID** ist. Den Prozess kannst Du mit folgendem Befehl beenden. Ersetze <id> mit der tatsächlichen Prozess-ID
-
-```bash
-sudo kill <id>
-```
-
-Wenn Du das gemacht hast, verwenden zuerst den folgenden Befehl und versuche es erst dann wieder mit sail up
-
-```bash
-sail down
-```
-
-### 2. Dockerprobleme
-
-Wenn Du Probleme mit Docker bzw. noch laufenden Containern hast, kannst Du diese Container beenden und auch direkt aus dem ... löschen.
-
-Das machst Du mit folgenden Befehlen
-
-1. Alle laufenden Container beenden
-
-```bash
-docker stop $(docker ps -a -q)
-```
-
-2. Alle gestoppten Container entfernen
-
-```bash
-docker rm $(docker ps -a -q)
-```
-
-### Storage Folder Permission Problem
-
-1. Versuche sail up ohne cache zu starten
-
-```bash
-sail build --no-cache
-```
-
-Falls das nicht funktioniert, versuche die Berechtigungen des storage Ordners zu ändern. Im Projektordner:
-
-```bash
-sudo chmod -R 777 storage
-```
+### API Requests: Axios
